@@ -10,18 +10,17 @@
                     <h3 class="text-center">{{product.name}}</h3>
                     <p class="description">{{ product.description}}</p>
                     <h4 class="text-center">${{product.price}}</h4>
-                    <div class="product_total">
+                    <div class="product_total" v-if="product_total != null">
                         <h3>In Cart</h3>
                         <h1>{{product_total}}</h1>
                     </div>
                     <div class="button_container">
-                        <button class="remove">-</button>
-                        <button class="add">+</button>
+                        <button class="remove" @click.prevent="removeCart()" >-</button>
+                        <button class="add" @click.prevent="addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-        <!-- </div> -->
     </div>
 </template>
 
@@ -33,7 +32,16 @@ export default {
     },
     computed:{
         product_total(){
-            return 100;
+            return this.$store.getters.productQuantity(this.product);
+        },
+        
+    },
+    methods:{
+        addToCart(){
+            this.$store.commit('addCart',this.product);
+        },
+        removeCart(){
+            this.$store.commit('removeCart',this.product);
         }
     }
 }
@@ -46,8 +54,6 @@ export default {
         top: 0;
         bottom: 0;
         z-index: 99999;
-        --darkreader-inline-bgcolor: rgba(30, 32, 33, 0.49);
-        --darkreader-inline-bgimage: none;
         background: rgba(40, 39, 39, 0.49) none repeat scroll 0% 0%;
         background: #2827277d;
         background-color: rgba(40, 39, 39, 0.49);

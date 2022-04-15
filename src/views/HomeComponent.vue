@@ -44,7 +44,7 @@ export default {
         onViewProduct(event){
             this.product = event;
             this.active.product_drawer = true;
-            console.log(this.product);
+            // console.log(this.product);
         },
         onCloseProductDrawer(){
             this.product = null,
