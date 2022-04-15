@@ -1,5 +1,6 @@
 import HomeComponent from '../views/HomeComponent'
 import AboutComponent from '../views/AboutComponent.vue'
+import CartComponent from '../views/CartComponent.vue'
 const routes = [
     {
       path: '/',
@@ -10,7 +11,12 @@ const routes = [
         path: '/about',
         name: 'AboutComponent',
         component: AboutComponent
-      },
+    },
+    {
+        path: '/cart',
+        name: 'CartComponent',
+        component: CartComponent
+    },
    
   ];
 export default routes;

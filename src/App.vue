@@ -10,10 +10,16 @@
             >Home</router-link>
           </li>
           <li class="nav-item">
+            <router-link :to="{ name: 'CartComponent'}" class="nav-link"
+             :class="[$route.name == 'CartComponent' ? 'active' : '']"
+            >Cart</router-link>
+          </li>
+          <li class="nav-item">
             <router-link :to="{ name: 'AboutComponent'}" class="nav-link"
              :class="[$route.name == 'AboutComponent' ? 'active' : '']"
             >About</router-link>
           </li>
+          
         </ul>
       </div>
         {{ $route.name }}
