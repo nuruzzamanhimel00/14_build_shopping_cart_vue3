@@ -61,7 +61,7 @@ export default {
         display: none;
         width: 100%;
         height: 100vh;
-        transition: all 2s;
+        transition: display .4s;
     }
     .drawer_background.show{
         display: block;

@@ -23,6 +23,9 @@ const store = createStore({
                 // console.log('else');
                 return null;
             }
+        },
+        cartItems:state =>{
+            return state.carts;
         }
     },
     mutations: {
