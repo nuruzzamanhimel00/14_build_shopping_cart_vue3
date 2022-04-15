@@ -22,7 +22,7 @@
           
         </ul>
       </div>
-        {{ $route.name }}
+        <!-- {{ $route.name }} -->
       <router-view></router-view>
     </div>
  </div>

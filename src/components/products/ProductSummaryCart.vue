@@ -5,6 +5,10 @@
                 <h3>{{product.name}}</h3>
                 <h3 class="price">${{product.price}}</h3>
                 <p class="description">{{description}}</p>
+                <p class="text-muted">Category: {{product.category}}</p>
+                <button class="btn btn-primary view-product-button"
+                    @click.prevent="$emit('viewproduct',product)"
+                >View Product</button>
             </div> 
         </div>
     </div>
@@ -25,3 +29,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .card{
+    margin: 10px 0;
+    box-shadow: 6px 5px gray;
+    text-align: center;
+    border: 2px solid #ddd;
+    }
+</style>
