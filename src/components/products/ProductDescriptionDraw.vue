@@ -41,7 +41,7 @@ export default {
             this.$store.commit('addCart',this.product);
         },
         removeCart(){
-            this.$store.commit('removeCart',this.product);
+            this.$store.commit('removeCart',this.product)
         }
     }
 }

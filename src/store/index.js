@@ -37,19 +37,24 @@ const store = createStore({
            updateLocalStorate(state.carts);
        },
        removeCart(state, product){
-        let item = state.carts.find( cart => cart.id == product.id );
-        if( item ){
-            if(item.quantity > 1){
-                item.quantity--;
-            }else{
-                // product quantiry zero hle oi product card teke remove hye jabe
-                state.carts = state.carts.filter( cart => cart.id != product.id );
+            let item = state.carts.find( cart => cart.id == product.id );
+            if( item ){
+                if(item.quantity > 1){
+                    item.quantity--;
+                }else{
+                    // product quantiry zero hle oi product card teke remove hye jabe
+                    state.carts = state.carts.filter( cart => cart.id != product.id );
+                }
+            
             }
-         
+            updateLocalStorate(state.carts);
+        },
+        updateCartFromLocalstorage(state){
+            const cart = localStorage.getItem('cart');
+            if(cart){
+                state.carts = JSON.parse(cart);
+            }
         }
-
-        updateLocalStorate(state.carts);
-    }
     },
     actions:{
 

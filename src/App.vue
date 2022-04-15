@@ -28,6 +28,19 @@
  </div>
 </template>
 
+<script>
+export default {
+  data(){
+    return {
+
+    }
+  },
+  mounted(){
+    this.$store.commit('updateCartFromLocalstorage');
+  }
+}
+</script>
+
 <style lang="css">
   html, body{
     margin: 0px;
