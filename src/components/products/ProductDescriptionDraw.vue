@@ -61,7 +61,7 @@ export default {
         display: none;
         width: 100%;
         height: 100vh;
-        transition: display .4s;
+        transition: all .4s;
     }
     .drawer_background.show{
         display: block;
@@ -76,7 +76,7 @@ export default {
         top: 0;
         left: -105vw;
         z-index: 9999999;
-        transition: left .5s;
+         transition: all .4s;
         overflow-y: scroll;
     }
     .drawer.show{

@@ -2,7 +2,7 @@
     <div class="">
         <p>THis is Home componet</p>
         <ProductDescriptionDraw
-            v-if="product"
+          
             :product="product"
             :active="active.product_drawer"
             @close-product-drawer="onCloseProductDrawer"
